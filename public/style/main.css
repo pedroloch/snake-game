@@ -30,7 +30,7 @@ main h1 {
 }
 
 main .scores {
-  width: 768px;
+  width: 384px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

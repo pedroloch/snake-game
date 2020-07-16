@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 let primary = '#f5a31a';
 let red = '#d32626';
 
-const grid = 32;
+const grid = 16;
 let count = 0;
 
 let score = 0;

@@ -18,7 +18,7 @@ main {
         padding: 0;
     }
     .scores {
-        width: 768px;
+        width: 384px;
         @include flex(row, space-between, space-between);
         p {
             padding-top: 1rem;
