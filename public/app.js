@@ -1,6 +1,12 @@
 const canvas = document.querySelector('canvas');
 const scoreNum = document.querySelector('.score');
 const maxScoreNum = document.querySelector('.maxscore');
+const up = document.querySelector('#up');
+const down = document.querySelector('#down');
+const left = document.querySelector('#left');
+const right = document.querySelector('#right');
+
+
 const ctx = canvas.getContext('2d');
 
 let primary = '#f5a31a';
@@ -115,6 +121,32 @@ document.addEventListener('keydown', function(e) {
         snake.vy = grid;
     }
 })
+
+up.addEventListener('click', function() {
+    if(snake.vy === 0) {
+        snake.vx = 0;
+        snake.vy = -grid;
+    }
+})
+down.addEventListener('click', function() {
+    if(snake.vy === 0) {
+        snake.vx = 0;
+        snake.vy = grid;
+    }
+})
+left.addEventListener('click', function() {
+    if(snake.vx === 0) {
+        snake.vx = -grid;
+        snake.vy = 0;
+    }
+})
+right.addEventListener('click', function() {
+    if(snake.vx === 0) {
+        snake.vx = grid;
+        snake.vy = 0;
+    }
+})
+
 
 requestAnimationFrame(update);
 
