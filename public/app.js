@@ -81,15 +81,19 @@ function update() {
         }
         for (let i = index + 1; i < snake.cells.length; i++) {
             if(cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                localStorage.setItem("maxscore", maxscore)
                 window.location.reload();
-            }
+            } 
         }
         printScore();
         printMaxScore();
         if (score > maxscore) {
             maxscore = score
+            maxScoreNum.style.color = primary;
+            }
+            
         
-        }
+        
         
     })
 }
@@ -102,8 +106,12 @@ function printScore() {
     scoreNum.innerHTML = `<p>Score: ${Math.floor(score)}</p>`
 }
 function printMaxScore() {
-    localStorage.setItem("maxscore", maxscore)
+   
     maxScoreNum.innerHTML = `<p>Your Record: ${Math.floor(maxscore)}</p>`
+}
+
+if (maxscore <= score) {
+    maxScoreNum.style.color = "#96bb7c"
 }
 
 document.addEventListener('keydown', function(e) {
@@ -122,25 +130,25 @@ document.addEventListener('keydown', function(e) {
     }
 })
 
-up.addEventListener('click', function() {
+up.addEventListener('touchend', function() {
     if(snake.vy === 0) {
         snake.vx = 0;
         snake.vy = -grid;
     }
 })
-down.addEventListener('click', function() {
+down.addEventListener('touchend', function() {
     if(snake.vy === 0) {
         snake.vx = 0;
         snake.vy = grid;
     }
 })
-left.addEventListener('click', function() {
+left.addEventListener('touchend', function() {
     if(snake.vx === 0) {
         snake.vx = -grid;
         snake.vy = 0;
     }
 })
-right.addEventListener('click', function() {
+right.addEventListener('touchend', function() {
     if(snake.vx === 0) {
         snake.vx = grid;
         snake.vy = 0;
