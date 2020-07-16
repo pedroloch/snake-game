@@ -1,6 +1,5 @@
-
-
 const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 const scoreNum = document.querySelector('.score');
 const maxScoreNum = document.querySelector('.maxscore');
 const up = document.querySelector('#up');
@@ -8,20 +7,10 @@ const down = document.querySelector('#down');
 const left = document.querySelector('#left');
 const right = document.querySelector('#right');
 
-console.log(innerWidth);
-
-const ctx = canvas.getContext('2d');
-
 let primary = '#f5a31a';
 let red = '#d32626';
 
 let grid = 32;
-// if (innerWidth < 1024) {
-//     grid = 16;
-//  } else if (innerWidth < 500) {
-//      grid = 14;
-//  }
- 
 let count = 0;
 
 let score = 0;
@@ -41,14 +30,9 @@ let apple = {
     y: grid * 10
 }
 
-
-// canvas.width = (grid * 24) + "px";
-// canvas.height = (grid * 14) + "px";
-
 function update() {
     requestAnimationFrame(update);
     score += .5;
-
 
     if (++count < 4) {
         return;
