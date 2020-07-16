@@ -8,8 +8,8 @@ html, body {
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     background: $lightgrey;
     @include flex(column);
     h1 {
@@ -18,11 +18,17 @@ main {
         padding: 0;
     }
     .scores {
-        width: 384px;
+        width: 786px;
         @include flex(row, space-between, space-between);
         p {
             padding-top: 1rem;
             margin: 0;
+        }
+        @media screen and (max-width: 1024px) {
+            width: 384px;
+        }
+        @media screen and (max-width: 500px) {
+            width: 312px;
         }
     }
     canvas {
@@ -76,5 +82,18 @@ main {
 @media screen and (min-width: 1025px) {
     .keys {
         display: none;
+    }
+   
+}
+@media screen and (max-width: 1024px) {
+    canvas {
+        height: 224px;
+        width: 384px;
+    }
+}
+@media screen and (max-width: 500px) {
+    canvas {
+        height: 182px;
+        width: 312px;
     }
 }

@@ -5,8 +5,8 @@ html, body {
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,7 +30,7 @@ main h1 {
 }
 
 main .scores {
-  width: 384px;
+  width: 786px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,6 +49,18 @@ main .scores {
 main .scores p {
   padding-top: 1rem;
   margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  main .scores {
+    width: 384px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .scores {
+    width: 312px;
+  }
 }
 
 main canvas {
@@ -126,6 +138,20 @@ main canvas {
 @media screen and (min-width: 1025px) {
   .keys {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  canvas {
+    height: 224px;
+    width: 384px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  canvas {
+    height: 182px;
+    width: 312px;
   }
 }
 /*# sourceMappingURL=main.css.map */
